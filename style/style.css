@@ -22,7 +22,7 @@
     --clr-bg-transparent2: rgba(0, 0, 0, 0.2);
 }
 
-/* CSS Boilerplate https://www.joshwcomeau.com/css/custom-css-reset/*/ 
+/* CSS Boilerplate https://www.joshwcomeau.com/css/custom-css-reset/ */ 
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -322,12 +322,12 @@ main, .main-wrapper {
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
+    margin-bottom: 20rem;
 }
 
 .section-text {
     height: 100%;
     max-width: 520px;
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -339,16 +339,59 @@ main, .main-wrapper {
     height: 100%;
     z-index: -10;
     top: 0;
-    left: 200px;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    transition: opacity .2s linear;
 }
 
-.img-container img {
+.img-container img, .img-container video {
     object-fit: cover;
     height: 100%;
     min-height: 900px;
+}
+
+.hide-animation {
+    opacity: 0;
+}
+
+.stick-to-top {
+    top: 0;
+    position: fixed;
+}
+
+/* Overview */
+
+.overview-text {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.overview-text h2 {
+    font: 46px/50px D-DIN-Bold, Arial, Verdana, sans-serif;
+}
+
+.columns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.columns p {
+    padding: 20px 0;
+    border-bottom: 1pt solid rgba(255,255,255,.3);
+}
+
+.first-column {
+    font: 14px/18px D-DIN-Bold, Arial, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+.second-column {
+    font: 600 16px/18px D-DIN-Regular, Arial, Verdana, sans-serif;
+    text-align: right;
 }
 
 /* Footer */
@@ -361,6 +404,7 @@ footer {
     color: #979797;
     padding: 20px 0;
     font: 12px/24px D-DIN-Bold, Arial, Verdana, sans-serif;
+    background-color: var(--clr-bg);
 }
 
 footer p {

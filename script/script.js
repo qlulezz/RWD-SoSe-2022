@@ -43,12 +43,13 @@
 
 // Scroll Counter
 // Source: https://marioyepes.com/pure-javascript-scroll-counter/
+/*
 document.addEventListener("DOMContentLoaded", function () {
     // You can change this class to specify which elements are going to behave as counters.
     var elements = document.querySelectorAll(".scroll-counter")
 
     elements.forEach(function (item) {
-        // Add new attributes to the elements with the '.scroll-counter' HTML class
+        // Add new attributes to the elements with the ".scroll-counter" HTML class
         item.counterAlreadyFired = false
         item.counterSpeed = item.getAttribute("data-counter-time") / 45
         item.counterTarget = +item.innerText
@@ -97,4 +98,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fire the function on scroll
     window.addEventListener("scroll", handleScroll)
+})
+*/
+
+// Waypoints (execute code on scroll)
+// Source: http://imakewebthings.com/waypoints/
+var waypoint = new Waypoint({
+    element: document.getElementById("start-first-animation"),
+    handler: function (direction) {
+        const topContainer = document.querySelector("#static-image");
+        const bottomContainer = document.querySelector("#animated-image");
+
+        if (direction === "down") {
+            topContainer.classList.add("stick-to-top");
+            bottomContainer.classList.add("stick-to-top");
+        } else {
+            topContainer.classList.remove("stick-to-top")
+            bottomContainer.classList.remove("stick-to-top")
+        }
+    }
+})
+
+var waypoint2 = new Waypoint({
+    element: document.getElementById("start-second-animation"),
+    handler: function (direction) {
+        const topContainer = document.querySelector("#static-image");
+        const bottomContainer = document.querySelector("#animated-image");
+        console.log("triggered");
+        
+        if (direction === "down") {
+            topContainer.classList.add("hide-animation");
+        } else {
+            topContainer.classList.remove("hide-animation");
+        }
+    }
 })

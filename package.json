@@ -1,0 +1,19 @@
+{
+  "name": "rwd-sose-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "node ./script/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qlulezz/RWD-SoSe-2022.git"
+  },
+  "author": "qlulezz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qlulezz/RWD-SoSe-2022/issues"
+  },
+  "homepage": "https://github.com/qlulezz/RWD-SoSe-2022#readme"
+}
