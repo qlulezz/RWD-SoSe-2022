@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="https://www.spacex.com/static/images/favicon.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script src="./script/script.js" defer></script>
-    <script src="./script/multi-animated-counter.js"></script>
+    <script src="./script/script.js" type="module" defer></script>
+    <script src="./script/countUp.js" type="module"></script>
     <script src="./script/noframework.waypoints.min.js"></script>
 </head>
 
@@ -26,7 +26,7 @@
                 </a>
                 <nav id="navigation">
                     <ul class="nav-links">
-                        <li class="nav-item"><a href="/">Decahedron 9</a></li>
+                        <li class="nav-item"><a href="/">Decahedron 10</a></li>
                         <li class="nav-item"><a href="/">Cube Heavy</a></li>
                         <li class="nav-item"><a href="/">Torus</a></li>
                         <li class="nav-item"><a href="/">Icoship</a></li>
@@ -57,15 +57,15 @@
         <div class="stats">
             <div class="stats-content" id="counters_1">
                 <div id="stat1" class="stat">
-                    <span class="number counter" data-targetnum="432">432</span>
+                    <span class="number counter" id="stat1counter">432</span>
                     <span class="label">Vertices</span>
                 </div>
                 <div id="stat2" class="stat">
-                    <span class="number counter" data-targetnum="864">864</span>
+                    <span class="number counter" id="stat2counter">864</span>
                     <span class="label">Edges</span>
                 </div>
                 <div id="stat3" class="stat">
-                    <span class="number counter" data-targetnum="432">432</span>
+                    <span class="number counter" id="stat3counter">432</span>
                     <span class="label">Faces</span>
                 </div>
             </div>
@@ -82,45 +82,60 @@
                 </div>
             </div>
             <div id="animated-image" class="img-container">
-                <video src="./style/img/TwistedTorus_Backdrop_V2_Animated.webm" autoplay loop></video>
+                <video src="./style/img/TwistedTorus_Backdrop_V2_Animated.webm" autoplay muted playsinline loop></video>
                 <!-- <img src="./style/img/Backdrop.png" alt="iframe"> -->
+                <div class="overview-test">
+                    <div class="section-inner">
+                        <div class="section-text overview-text">
+                            <p>TORUS</p>
+                            <h2>OVERVIEW</h2>
+                            <div class="columns">
+                                <p class="first-column">Height</p>
+                                <p class="second-column">2 m <i>/ 6.6 ft</i></p>
+                                <p class="first-column">Inner Diameter</p>
+                                <p class="second-column">4 m <i>/ 13 ft</i></p>
+                                <p class="first-column">Outer Diameter</p>
+                                <p class="second-column">6 m <i>/ 20 ft</i></p>
+                                <p class="first-column">Volume</p>
+                                <p class="second-column">8 m³ <i>/ 282.5 ft</i></p>
+                                <p class="first-column">Surface Area</p>
+                                <p class="second-column">16 m³ <i>/ 565 ft</i></p>
+                                <p class="first-column">Payload Mass</p>
+                                <p class="second-column">6,000 kg <i>/ 13,228 lbs</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="static-image" class="img-container">
                 <img src="./style/img/Lineart.png" alt="Lineart">
             </div>
         </div>
-        <div class="overview">
-            <div class="section-inner">
-                <div class="section-text overview-text">
-                    <p>TORUS</p>
-                    <h2>OVERVIEW</h2>
-                    <div class="columns">
-                        <p class="first-column">Height</p>
-                        <p class="second-column">8.1 m / 26.7 ft</p>
-                        <p class="first-column">Inner Diameter</p>
-                        <p class="second-column">8.1 m / 26.7 ft</p>
-                        <p class="first-column">Outer Diameter</p>
-                        <p class="second-column">8.1 m / 26.7 ft</p>
-                        <p class="first-column">Volume</p>
-                        <p class="second-column">8.1 m / 26.7 ft</p>
-                        <p class="first-column">Surface Area</p>
-                        <p class="second-column">8.1 m / 26.7 ft</p>
-                        <p class="first-column">Payload Mass</p>
-                        <p class="second-column">8.1 m / 26.7 ft</p>
-                    </div>
-                </div>
-            </div>
+        <div class="overview" id="end-first-animation"></div>
+        <div class="video-section">
+            <!-- <video
+                src="https://raw.githubusercontent.com/qlulezz/GIS-SoSe-2021/main/1_HTML-und-CSS/Aufgabe_1.4/Lofi.mp4"
+                autoplay muted playsinline loop controls></video> -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iNSa8oq4vYQ"
+                title="YouTube video player" frameborder="0"
+                allowfullscreen></iframe>
         </div>
     </main>
     <footer>
         <div>
             <span>FaceX © 2022</span>
-            <a href="/" rel="noopener" target="_blank">Twitter</a>
+<!--             <a href="/" rel="noopener" target="_blank">Twitter</a>
             <a href="/" rel="noopener" target="_blank">YouTube</a>
             <a href="/" rel="noopener" target="_blank">Instagram</a>
             <a href="/" rel="noopener" target="_blank">Flickr</a>
             <a href="/" rel="noopener" target="_blank">LinkedIn</a>
-            <a href="/" rel="noopener" target="_blank">Privacy Policy</a>
+            <a href="/" rel="noopener" target="_blank">Privacy Policy</a> -->
+            <a href="/" rel="noopener" target="_blank">YouTube</a>
+            <a href="/" rel="noopener" target="_blank">Instagram</a>
+            <a href="/" rel="noopener" target="_blank">GitHub Repo</a>
+            <a href="/" rel="noopener" target="_blank">About</a>
+            <a href="/" rel="noopener" target="_blank">Libraries</a>
+            <a href="/" rel="noopener" target="_blank">Roadmap</a>
         </div>
     </footer>
 </body>
