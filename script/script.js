@@ -1,5 +1,5 @@
 // Count on Scroll: https://github.com/inorganik/countUp.js
-import { CountUp } from "./countUp.js";
+import { CountUp } from "./countUp.min.js";
 
 const options = {
     duration: 5
@@ -88,8 +88,8 @@ var waypoint = new Waypoint({
             topContainer.classList.add("stick-to-top");
             bottomContainer.classList.add("stick-to-top");
         } else {
-            topContainer.classList.remove("stick-to-top")
-            bottomContainer.classList.remove("stick-to-top")
+            topContainer.classList.remove("stick-to-top");
+            bottomContainer.classList.remove("stick-to-top");
         }
         c1.reset();
         c2.reset();
@@ -107,6 +107,16 @@ var waypoint2 = new Waypoint({
         } else {
             topContainer.classList.remove("hide-animation");
         }
+
+        anime({
+            targets: '.staggered',
+            translateX: -50,
+            opacity: 1,
+            delay: anime.stagger(150),
+            easing: 'easeInOutQuad'
+        });
+        Array.from(document.querySelectorAll(".columns hr")).forEach(hr => hr.classList.add("hrAnimation"));
+
     }, offset: "-10%"
 })
 
