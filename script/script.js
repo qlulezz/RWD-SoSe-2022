@@ -1,16 +1,12 @@
 // Count on Scroll: https://github.com/inorganik/countUp.js
 import { CountUp } from "./countUp.min.js";
 
-const options = {
-    duration: 5
-};
-
+const options = { duration: 3 };
 let c1 = new CountUp("stat1counter", 432, options);
 let c2 = new CountUp("stat2counter", 864, options);
 let c3 = new CountUp("stat3counter", 432, options);
 
-// Hide navbar on scroll
-// Source: https://codingreflections.com/hide-header-on-scroll-down/
+// Hide navbar on scroll: https://codingreflections.com/hide-header-on-scroll-down/
 (function () {
     var doc = document.documentElement;
     var w = window;
@@ -50,9 +46,8 @@ let c3 = new CountUp("stat3counter", 432, options);
     window.addEventListener("scroll", checkScroll);
 })();
 
-// Waypoints (execute code on scroll)
-// Source: http://imakewebthings.com/waypoints/
-
+// Waypoints (execute code on scroll): http://imakewebthings.com/waypoints/
+// Starts counting animation when scrolling from top to bottom
 var counterPointTop = new Waypoint({
     element: document.getElementById("counters_1"),
     handler: function (direction) {
@@ -65,10 +60,10 @@ var counterPointTop = new Waypoint({
             c2.reset();
             c3.reset();
         }
-
     }, offset: "98%"
-})
+});
 
+// Starts counting animation when scrolling from bottom to top
 var counterPointBottom = new Waypoint({
     element: document.getElementById("counters_1"),
     handler: function () {
@@ -76,9 +71,10 @@ var counterPointBottom = new Waypoint({
         c2.start();
         c3.start();
     }, offset: -100
-})
+});
 
-var waypoint = new Waypoint({
+// Snaps and unsnaps Lineart to the top of the screen depending on direction
+var StickyLineart = new Waypoint({
     element: document.getElementById("start-first-animation"),
     handler: function (direction) {
         const topContainer = document.querySelector("#static-image");
@@ -95,8 +91,9 @@ var waypoint = new Waypoint({
         c2.reset();
         c3.reset();
     }
-})
+});
 
+// Starts and stops overview animation depending on direction
 var waypoint2 = new Waypoint({
     element: document.getElementById("start-second-animation"),
     handler: function (direction) {
@@ -109,18 +106,19 @@ var waypoint2 = new Waypoint({
         }
 
         anime({
-            targets: '.staggered',
+            targets: ".staggered",
             translateX: -50,
             opacity: 1,
-            delay: anime.stagger(150),
-            easing: 'easeInOutQuad'
+            delay: anime.stagger(100),
+            easing: "easeInOutQuad"
         });
         Array.from(document.querySelectorAll(".columns hr")).forEach(hr => hr.classList.add("hrAnimation"));
 
     }, offset: "-10%"
-})
+});
 
-var waypoint3 = new Waypoint({
+// Snaps and unsnaps Overview section to the bottom of the screen depending on direction
+var StickyOverview = new Waypoint({
     element: document.getElementById("end-first-animation"),
     handler: function (direction) {
         const topContainer = document.querySelector("#static-image");
@@ -130,11 +128,25 @@ var waypoint3 = new Waypoint({
             topContainer.classList.add("stick-to-bottom");
             bottomContainer.classList.add("stick-to-bottom");
         } else {
-            topContainer.classList.remove("stick-to-bottom")
-            bottomContainer.classList.remove("stick-to-bottom")
+            topContainer.classList.remove("stick-to-bottom");
+            bottomContainer.classList.remove("stick-to-bottom");
         }
-        document.getElementsByClassName("counter")[0].setAttribute("data-targetnum", 0)
-        document.getElementsByClassName("counter")[1].setAttribute("data-targetnum", 0)
-        document.getElementsByClassName("counter")[2].setAttribute("data-targetnum", 0)
+        document.getElementsByClassName("counter")[0].setAttribute("data-targetnum", 0);
+        document.getElementsByClassName("counter")[1].setAttribute("data-targetnum", 0);
+        document.getElementsByClassName("counter")[2].setAttribute("data-targetnum", 0);
     }
-})
+});
+
+const videoContentTop = document.querySelector(".video-content-top");
+const iframe = document.querySelector(".video-content-bottom iframe");
+document.querySelector(".video-section").addEventListener("click", videoSection);
+
+function videoSection() {
+    if (videoContentTop.style.display == "none") {
+        videoContentTop.style.display = "block";
+        let iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+    } else {
+        videoContentTop.style.display = "none";
+    }
+}
