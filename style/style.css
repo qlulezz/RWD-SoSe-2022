@@ -73,7 +73,7 @@ body {
 }
 
 .background {
-    background: no-repeat url(./img/earth-torus_.jpg) center / cover, var(--clr-bg);
+    background: no-repeat url(./img/earth-torus.jpg) center / cover, var(--clr-bg);
 }
 
 a, a:active, a:link, a:visited {
