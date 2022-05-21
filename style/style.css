@@ -650,10 +650,10 @@ h2 {
 
 .next-section {
     position: relative;
-    background-image: url(./img/mars.jpg);
+    background-image: url(./img/mars_landing.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;
+    background-position: center center;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -672,9 +672,9 @@ h2 {
     align-items: flex-start;
 }
 
-/* .next p {
+.next-section p {
     font: 16px/26px D-DIN-Regular, Arial, Verdana, sans-serif;
-} */
+}
 
 /* Libraries */
 
