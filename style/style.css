@@ -64,6 +64,10 @@ p, h1, h2, h3, h4, h5, h6 {
     src: url("./fonts/D-DIN.woff2");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--clr-fg);
     background-color: var(--clr-bg);
@@ -653,7 +657,7 @@ h2 {
     background-image: url(./img/mars_landing.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: 20% 50%;
     width: 100%;
     height: 100%;
     overflow: hidden;
