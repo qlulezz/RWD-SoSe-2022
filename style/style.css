@@ -235,7 +235,7 @@ main, .main-wrapper {
     margin: 0 auto;
 }
 
-#torus-header, #libraries-header {
+#torus-header, #libraries-header, #about-header {
     position: absolute;
     top: 50%;
     left: 10%;
@@ -243,7 +243,7 @@ main, .main-wrapper {
     text-transform: uppercase;
 }
 
-#torus-header h1, #libraries-header h1 {
+#torus-header h1, #libraries-header h1, #about-header h1 {
     position: relative;
     font: 100px/85px D-DIN-Bold, Arial, Verdana, sans-serif;
     color: var(--clr-fg);
@@ -251,7 +251,7 @@ main, .main-wrapper {
     animation: h1StartAnimation 900ms ease;
 }
 
-#torus-header h3, .about-container h2, #libraries-header h3 {
+#torus-header h3, .about-container h2, #libraries-header h3, #about-header h3 {
     font: 20px/32px D-DIN-Regular, Arial, Verdana, sans-serif;
     animation: h3StartAnimation 1s ease;
 }
@@ -733,8 +733,7 @@ h2 {
 
 /* About */
 
-.about-background {
-    text-shadow: 0 0 10px var(--clr-transparent);
+.about-body {
     background: no-repeat url(./img/about.jpg) top center / cover, var(--clr-bg);
 }
 
@@ -818,19 +817,19 @@ footer a:hover {
         transform: none;
     }
 
-    .libraries-body {
+    .libraries-body, .about-body {
         background-attachment: fixed;
     }
 
-    .libraries-body .main-wrapper {
+    .libraries-body .main-wrapper, .about-body .main-wrapper {
         height: 200%;
     }
 
-    .libraries-body .main-cta {
+    .libraries-body .main-cta, .about-body .main-cta {
         height: 50%;
     }
 
-    #libraries-header {
+    #libraries-header, #about-header {
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -845,6 +844,16 @@ footer a:hover {
         transform: translate(-50%, 0);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        z-index: 1000;
+        max-width: 1200px;
+        width: max-content;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 }
 
@@ -907,7 +916,7 @@ footer a:hover {
     }
 
     .video-section-text h2 {
-        font: 36px/36px D-DIN-Bold,Arial,Verdana,sans-serif;
+        font: 36px/36px D-DIN-Bold, Arial, Verdana, sans-serif;
     }
 
     .libraries {
@@ -924,8 +933,18 @@ footer a:hover {
         height: 250%;
     }
 
+    .about-body .main-wrapper {
+        height: 200%;
+    }
+
     #libraries-header {
         top: 40%;
+    }
+}
+
+@media (max-width: 620px) {
+    .about-container {
+        width: 100%;
     }
 }
 
@@ -951,11 +970,37 @@ footer a:hover {
         font: 36px/36px D-DIN-Bold,Arial,Verdana,sans-serif;
     }
 
-    #libraries-header h1{
+    #libraries-header h1, #about-header h1 {
         font: 69px/65px D-DIN-Bold, Arial, Verdana, sans-serif;
     }
 
-    #libraries-header h3 {
+    #libraries-header h3, #about-header h3 {
         font: 15px/20px D-DIN-Bold, Arial, Verdana, sans-serif;
+    }
+
+    .about-container {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .about-container h1 {
+        font: 36px/36px D-DIN-Bold, Arial, Verdana, sans-serif;
+    }
+
+    .about-container h2 {
+        font: 15px/20px D-DIN-Regular, Arial, Verdana, sans-serif;
+    }
+
+    .about-container p {
+        font: 16px/20px D-DIN-Regular, Arial, Verdana, sans-serif;
+    }
+
+    .about-container .img-container2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container .btn, .about-container .button-container {
+        width: 100%;
     }
 }
