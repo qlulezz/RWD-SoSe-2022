@@ -747,7 +747,6 @@ h2 {
     left: 50%;
     transform: translateY(-50%);
     padding: 3rem;
-    background-color: var(--clr-transparent);
 }
 
 .about-container .img-container2 {

@@ -1,7 +1,7 @@
 // Count on Scroll: https://github.com/inorganik/countUp.js
 import { CountUp } from "./countUp.min.js";
 
-const options = { duration: 3 };
+const options = { duration: 1.5 };
 let c1 = new CountUp("stat1counter", 432, options);
 let c2 = new CountUp("stat2counter", 864, options);
 let c3 = new CountUp("stat3counter", 432, options);
